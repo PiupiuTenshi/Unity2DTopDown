@@ -21,7 +21,7 @@ public class ItemDictionary : MonoBehaviour
 
         foreach (Item item in itemPrefabs)
         {
-            itemDictionary[item.GetID()] = item.gameObject;
+            itemDictionary[item.GetID()] = item.GetItemPrefab();
         }
     }
 

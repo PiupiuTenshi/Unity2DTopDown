@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4987802698179158251, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: itemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 92ad16e9e7d915f44991233ab933ae4e, type: 2}
     - target: {fileID: 6401265020641392093, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
       propertyPath: m_Name
       value: BeefItem

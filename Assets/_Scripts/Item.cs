@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item Data")]
+public class Item : ScriptableObject
 {
     [SerializeField] private int ID;
 
-    public void SetID(int id)
-    {
-        this.ID = id;
-    }
+    [SerializeField] private GameObject itemPrefab;
 
-    public int GetID()
-    {
-        return this.ID;
-    }
+    public void SetID(int id) => this.ID = id;
+    public int GetID() => this.ID;
+    public GameObject GetItemPrefab() => this.itemPrefab;
 }

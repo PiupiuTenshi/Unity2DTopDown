@@ -34,8 +34,19 @@ public class InventoryController : MonoBehaviour
             Slot slot = slotTransform.GetComponent<Slot>();
             if (slot.currentItem != null)
             {
-                Item item = slot.currentItem.GetComponent<Item>();
-                listInventorySaveData.Add(new InventorySaveData { itemID = item.GetID(), slotIndex = slotTransform.GetSiblingIndex() });
+                ItemDisplay itemDisplay = slot.currentItem.GetComponent<ItemDisplay>();
+                if (itemDisplay != null && itemDisplay.itemData != null)
+                {
+                    listInventorySaveData.Add(new InventorySaveData 
+                    { 
+                        itemID = itemDisplay.itemData.GetID(), 
+                        slotIndex = slotTransform.GetSiblingIndex() 
+                    });
+                }
+                else
+                {
+                    
+                }
             }
         }
         return listInventorySaveData;
