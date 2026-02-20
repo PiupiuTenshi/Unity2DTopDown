@@ -100,7 +100,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: CalamariItem
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7459085704941141363, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459085704941141363, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459085704941141363, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d7bad2a0e52bb0a49b5ee0cd64ef64a3, type: 3}
+    - target: {fileID: 7459085704941141363, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064015189171455374, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064015189171455374, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064015189171455374, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d7bad2a0e52bb0a49b5ee0cd64ef64a3, type: 3}
+    - target: {fileID: 8064015189171455374, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7459085704941141363, guid: 058227b59d18e7d4ab0cf73dc08bbde2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
