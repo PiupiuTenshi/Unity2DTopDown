@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SaveController : MonoBehaviour
 {
     private InventoryController inventoryController;
+    private HotBarController hotBarController;
     [SerializeField] private Button saveButton;
     private const string PLAYER_TAG = "Player";
     private const string SAVE_FILE = "SaveData.json";
@@ -24,6 +25,7 @@ public class SaveController : MonoBehaviour
     {
         saveLocation = Path.Combine(Application.dataPath, SAVE_FILE); 
         inventoryController = FindObjectOfType<InventoryController>();
+        hotBarController = FindObjectOfType<HotBarController>();
 
         LoadGame();
     }
@@ -33,7 +35,8 @@ public class SaveController : MonoBehaviour
         SaveData saveData = new SaveData
         {
             mapBound = FindAnyObjectByType<CinemachineConfiner>().m_BoundingShape2D.gameObject.name,
-            listInventorySaveData = inventoryController.GetInventorySaveData(),
+            listInventorySaveData = inventoryController.GetContainSaveData(),
+            listHotBarSaveData = hotBarController.GetContainSaveData(),
         };
         saveData.SetPlayerPosition(GameObject.FindGameObjectWithTag(PLAYER_TAG).transform.position);
 
@@ -47,7 +50,8 @@ public class SaveController : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
             GameObject.FindGameObjectWithTag(PLAYER_TAG).transform.position = saveData.GetPlayerPosition();
             FindAnyObjectByType<CinemachineConfiner>().m_BoundingShape2D = GameObject.Find(saveData.mapBound).GetComponent<PolygonCollider2D>();
-            inventoryController.SetInventoryItems(saveData.listInventorySaveData);
+            inventoryController.SetContainItems(saveData.listInventorySaveData);
+            hotBarController.SetContainItems(saveData.listHotBarSaveData);
         }
         else
         {

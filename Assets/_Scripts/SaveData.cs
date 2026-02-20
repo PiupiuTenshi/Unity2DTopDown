@@ -6,6 +6,7 @@ using UnityEngine;
 public class SaveData 
 {
     public List<InventorySaveData> listInventorySaveData;
+    public List<InventorySaveData> listHotBarSaveData;
     public float xPosition;
     public float yPosition;
     public float zPosition;

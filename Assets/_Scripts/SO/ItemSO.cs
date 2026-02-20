@@ -6,10 +6,11 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     [SerializeField] private int ID;
-
+    [SerializeField] private string nameItem;
     [SerializeField] private GameObject itemPrefab;
 
     public void SetID(int id) => this.ID = id;
     public int GetID() => this.ID;
     public GameObject GetItemPrefab() => this.itemPrefab;
+    public string GetName() => this.nameItem;
 }

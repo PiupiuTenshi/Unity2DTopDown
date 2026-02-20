@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: BeefItemSO
   m_EditorClassIdentifier: 
   ID: 0
+  nameItem: Beef
   itemPrefab: {fileID: 5273348458955735790, guid: 3a23af04a5ef37f409a3e3c66ccd15cc, type: 3}

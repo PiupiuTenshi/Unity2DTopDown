@@ -22,6 +22,7 @@ public class PlayerControlCollector : MonoBehaviour
                 bool isAddItem = inventoryController.AddItem(collision.gameObject);
                 if (isAddItem)
                 {
+                    itemDisplay.PickUp();
                     Destroy(collision.gameObject);
                 }
             }

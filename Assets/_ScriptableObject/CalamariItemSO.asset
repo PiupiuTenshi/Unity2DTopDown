@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: CalamariItemSO
   m_EditorClassIdentifier: 
   ID: 0
+  nameItem: Calamari
   itemPrefab: {fileID: 6067025736336999154, guid: 021eb7a952cd1b3458f1c83e70e7b6c8, type: 3}
