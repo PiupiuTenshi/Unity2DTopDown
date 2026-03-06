@@ -4629,6 +4629,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935929099723552904, guid: 021eb7a952cd1b3458f1c83e70e7b6c8, type: 3}
+      propertyPath: maxDropItem
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935929099723552904, guid: 021eb7a952cd1b3458f1c83e70e7b6c8, type: 3}
+      propertyPath: minDropItem
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6067025736336999154, guid: 021eb7a952cd1b3458f1c83e70e7b6c8, type: 3}
       propertyPath: m_Name
       value: CalamariItem

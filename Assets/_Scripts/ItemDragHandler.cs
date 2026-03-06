@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(CanvasGroup), typeof(RectTransform))]
 public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private const string PLAYER = "Player";
     private Transform originalParent;
     private CanvasGroup canvasGroup;
+    [SerializeField] private float minDropItem = 1f;
+    [SerializeField] private float maxDropItem = 1.5f;
+
 
     private void Start()
     {
@@ -58,9 +62,43 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
         else
         {
-            transform.SetParent(originalParent.transform);
+            // if the item in the panel return the parent position
+            // if the item without the panel drop it
+            if (!IsWithinInventory(eventData.position))
+            {
+                DropItem(originalSlot);
+            }
+            else
+            {
+                transform.SetParent(originalParent.transform);
+            }
         }
 
         GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+    }
+
+    private bool IsWithinInventory(Vector2 mousePosition)
+    {
+        RectTransform inventoryRectTransform = originalParent.parent.GetComponent<RectTransform>();
+        return RectTransformUtility.RectangleContainsScreenPoint(inventoryRectTransform, mousePosition);
+    }
+
+    private void DropItem(Slot currentSlot)
+    {
+        Transform playerPosition = GameObject.FindGameObjectWithTag(PLAYER)?.transform;
+        if (playerPosition == null)
+        {
+            Debug.LogError("Missing player!!!");
+            return;
+        }
+
+        // the range drop item
+        Vector2 dropOffset = Random.insideUnitCircle.normalized * Random.Range(minDropItem, maxDropItem);
+        Vector2 dropPosition = (Vector2)playerPosition.position + dropOffset;
+
+        currentSlot.currentItem = null;
+        Instantiate(gameObject, dropPosition, Quaternion.identity);
+        Destroy(gameObject);
+
     }
 }
