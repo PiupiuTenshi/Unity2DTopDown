@@ -8,7 +8,7 @@ public class BounceEffect : MonoBehaviour
     private float bounceDuration = 0.4f;
     private int bounceCount = 2;
 
-    private void StartBounce()
+    public void StartBounce()
     {
         StartCoroutine(BounceHandler());
     }

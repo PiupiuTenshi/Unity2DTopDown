@@ -97,8 +97,9 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Vector2 dropPosition = (Vector2)playerPosition.position + dropOffset;
 
         currentSlot.currentItem = null;
-        Instantiate(gameObject, dropPosition, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject dropItem = Instantiate(gameObject, dropPosition, Quaternion.identity);
+        dropItem.GetComponent<BounceEffect>().StartBounce();
 
+        Destroy(gameObject);
     }
 }
