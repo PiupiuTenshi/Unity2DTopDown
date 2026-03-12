@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4987802698179158251}
   - component: {fileID: 1895041703534465586}
   - component: {fileID: 8064015189171455374}
+  - component: {fileID: 639403550550332102}
   m_Layer: 5
   m_Name: Item
   m_TagString: Item
@@ -104,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb31ab8c9671d94b8cfadefd321c455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDropItem: 1
+  maxDropItem: 1.5
 --- !u!114 &4987802698179158251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +207,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &639403550550332102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401265020641392093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7f29dacadf74141bc3120a63501db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
